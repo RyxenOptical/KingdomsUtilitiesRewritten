@@ -1,0 +1,6 @@
+name: KingdomsUtilitiesRewritten
+version: '${project.version}'
+main: me.ryxenoptical.kingdomsutilitiesrewritten.KingdomsUtilitiesRewritten
+api-version: 1.19
+authors: [ RyxenOptical ]
+description: For Kingdoms SMP!
