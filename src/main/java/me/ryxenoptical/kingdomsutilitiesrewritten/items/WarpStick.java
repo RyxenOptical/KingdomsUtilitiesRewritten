@@ -25,7 +25,7 @@ public class WarpStick
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName("§dWarp Stick");
         List<String> lore = new ArrayList<>();
-        lore.add("§8Warp the world around you!");
+        lore.add("§7Warp the world around you!");
         meta.setLore(lore);
         meta.setCustomModelData(5);
         item.setItemMeta(meta);

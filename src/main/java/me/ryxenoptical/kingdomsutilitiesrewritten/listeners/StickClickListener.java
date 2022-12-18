@@ -16,13 +16,13 @@ public class StickClickListener implements Listener
     public void onPlayerRightClick(PlayerInteractEvent event) // Called on a player action
     {
 
-        var item = event.getItem();
+        var item = Objects.requireNonNull(event).getItem();
         var action = event.getAction();
 
         event.getPlayer().sendMessage(Objects.requireNonNull(item).getItemMeta().toString() + "|||||" + WarpStick.warpstick);
 
         if(action.equals(Action.RIGHT_CLICK_AIR)  // If clicked on air with a stick named Warp Stick
-        && Objects.requireNonNull(item).getItemMeta() == WarpStick.warpstick)
+        && Objects.requireNonNull(item).getItemMeta().getCustomModelData() == WarpStick.warpstick.getItemMeta().getCustomModelData())
         {
 
             event.getPlayer().sendMessage("SUCCESS");
