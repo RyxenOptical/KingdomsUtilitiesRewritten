@@ -19,13 +19,9 @@ public class StickClickListener implements Listener
         var item = Objects.requireNonNull(event).getItem();
         var action = event.getAction();
 
-        event.getPlayer().sendMessage(Objects.requireNonNull(item).getItemMeta().toString() + "|||||" + WarpStick.warpstick);
-
-        if(action.equals(Action.RIGHT_CLICK_AIR)  // If clicked on air with a stick named Warp Stick
+        if(Objects.requireNonNull(action).equals(Action.RIGHT_CLICK_AIR)  // If clicked on air with a stick named Warp Stick
         && Objects.requireNonNull(item).getItemMeta().hasCustomModelData())
         {
-
-            event.getPlayer().sendMessage("Debug 1");
 
             if(item.getItemMeta().getCustomModelData() == WarpStick.warpstick.getItemMeta().getCustomModelData())
             {
