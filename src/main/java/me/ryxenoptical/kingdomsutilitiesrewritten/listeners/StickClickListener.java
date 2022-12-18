@@ -22,10 +22,17 @@ public class StickClickListener implements Listener
         event.getPlayer().sendMessage(Objects.requireNonNull(item).getItemMeta().toString() + "|||||" + WarpStick.warpstick);
 
         if(action.equals(Action.RIGHT_CLICK_AIR)  // If clicked on air with a stick named Warp Stick
-        && Objects.requireNonNull(item).getItemMeta().getCustomModelData() == WarpStick.warpstick.getItemMeta().getCustomModelData())
+        && Objects.requireNonNull(item).getItemMeta().hasCustomModelData())
         {
 
-            event.getPlayer().sendMessage("SUCCESS");
+            event.getPlayer().sendMessage("Debug 1");
+
+            if(item.getItemMeta().getCustomModelData() == WarpStick.warpstick.getItemMeta().getCustomModelData())
+            {
+
+                event.getPlayer().sendMessage("SUCCESS");
+
+            }
 
         }
 
