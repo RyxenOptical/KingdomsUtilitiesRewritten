@@ -4,3 +4,8 @@ main: me.ryxenoptical.kingdomsutilitiesrewritten.KingdomsUtilitiesRewritten
 api-version: 1.19
 authors: [ RyxenOptical ]
 description: For Kingdoms SMP!
+commands:
+  givewarpstick:
+    description: Gives a stick that can warp space and time
+    usage: /<command>
+    aliases: [gws, givews, wsgive, warpstickgive]
