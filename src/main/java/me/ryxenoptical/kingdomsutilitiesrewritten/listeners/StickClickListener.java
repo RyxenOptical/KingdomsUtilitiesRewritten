@@ -1,14 +1,16 @@
-package me.ryxenoptical.kingdomsutilitiesrewritten;
+package me.ryxenoptical.kingdomsutilitiesrewritten.listeners;
 
 //Imports
-import org.bukkit.Material;
+import me.ryxenoptical.kingdomsutilitiesrewritten.items.WarpStick;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
+import java.util.Objects;
 
 // Warp Stick Class
-public class StickClickListener implements Listener {
+public class StickClickListener implements Listener
+{
 
     @EventHandler
     public void onPlayerRightClick(PlayerInteractEvent event) // Called on a player action
@@ -16,14 +18,11 @@ public class StickClickListener implements Listener {
 
         var item = event.getItem();
         var action = event.getAction();
-        var wanditem = Material.STICK; //not used rn
-        var wandname = "Warp Stick"; //not used rn
 
-        event.getPlayer().sendMessage(item.getItemMeta().toString());
+        event.getPlayer().sendMessage(Objects.requireNonNull(item).getItemMeta().toString() + "|||||" + WarpStick.warpstick);
 
         if(action.equals(Action.RIGHT_CLICK_AIR)  // If clicked on air with a stick named Warp Stick
-        && item.getType().equals(Material.STICK)
-        && item.getItemMeta().getCustomModelData() == 1)
+        && Objects.requireNonNull(item).getItemMeta() == WarpStick.warpstick)
         {
 
             event.getPlayer().sendMessage("SUCCESS");

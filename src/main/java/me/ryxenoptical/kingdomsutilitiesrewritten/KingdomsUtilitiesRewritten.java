@@ -1,6 +1,9 @@
 package me.ryxenoptical.kingdomsutilitiesrewritten;
 
+import me.ryxenoptical.kingdomsutilitiesrewritten.commands.GiveWarpStick;
+import me.ryxenoptical.kingdomsutilitiesrewritten.listeners.StickClickListener;
 import org.bukkit.plugin.java.JavaPlugin;
+import me.ryxenoptical.kingdomsutilitiesrewritten.items.WarpStick;
 
 public final class KingdomsUtilitiesRewritten extends JavaPlugin {
 
@@ -8,8 +11,13 @@ public final class KingdomsUtilitiesRewritten extends JavaPlugin {
     public void onEnable() // Plugin startup logic
     {
 
-        getLogger().info("Hello There!");
+        getLogger().info("Enabling...");
+
+        WarpStick.StickInit(); // Register Stick Item
         getServer().getPluginManager().registerEvents(new StickClickListener(), this); // Register Warp Stick Event
+        getCommand("givewarpstick").setExecutor(new GiveWarpStick());
+
+        getLogger().info("Hello There!");
 
     }
 
